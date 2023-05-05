@@ -12,10 +12,15 @@ export const load = async () => {
         return productData
     }
 
-    return {
-       cars: fetchCars(),
-       POIs: fetchPOI()
+    const fetchStop = async () => {   
+        const productRes = await fetch('https://vda-lab.github.io/assets/vast2021_carstops.json')
+        const productData = await productRes.json()
+        return productData
     }
 
-
+    return {
+       Cars: fetchCars(),
+       POIs: fetchPOI(),
+       Stop: fetchStop()
+    }
 }

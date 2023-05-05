@@ -1,31 +1,41 @@
 <script>
-import Scatterplot from './scatterplot.svelte';
-import data2 from './data.js';
 
+	// $: console.log('Changed selected:', selected)
+	// $: console.log('Updated options:', options)
+
+  import CarFilter from "./CarFilter";
   export let data;
-  const { cars, POIs } = data;
+  const { Cars, POIs, Stop } = data;
 
-  const cars_coord = cars.map(coords=>{
-    return {
-      x:coords.lat,
-      y:coords.long
-    }
-  })
+const all=["All"];
 
-  const poi_coord = POIs.map(coords=>{
-    return {
-      x:coords.lat,
-      y:coords.long,
-      name:coords.type
-    }
-  })
+import _ from 'lodash';
+ let idList = Cars.map(obj => obj.car_id)
+ let uniqueIDs = _.uniq(idList);
 
+ let selected = "All";
+	    let options=all.concat(uniqueIDs);
+
+
+// $:console.log(CarFilter.CarTrackSelect(Cars,selected))
+// $:console.log(selected)
 
 
 </script>
 
 <h1>Kendall Brown - KU Leuven - r0773111</h1>
-<p>Overview</p>
+<p>
+  Overview
+</p>
+<p>
+	Select Car to Highlight
+	<select bind:value={selected}>
+		{#each options as value}<option {value}>{value}</option>{/each}
+	</select>
+</p>
 
-
-<Scatterplot points={cars_coord}/>
+<!-- dropdown
+(details -> selectedcars stopgrid)
+unselected cars
+selected cars
+pois -->
