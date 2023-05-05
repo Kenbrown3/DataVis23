@@ -17,8 +17,10 @@ import _ from 'lodash';
 	    let options=all.concat(uniqueIDs);
 
 
-// $:console.log(CarFilter.CarTrackSelect(Cars,selected))
-// $:console.log(selected)
+$:console.log(CarFilter.CarTrackSelect(Cars,selected))
+$:console.log(selected)
+$:console.log(CarFilter.CarTrackNonSelect(Cars,selected))
+
 
 
 </script>
