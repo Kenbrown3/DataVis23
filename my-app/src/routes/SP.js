@@ -59,11 +59,11 @@ const SP = (NS,S,P)=>{
     .attr("stroke-width", 1.5)
     .on('mouseover', function () {
         d3.select(this).transition()
-             .duration('100')
+             .duration(100)
              .attr("r", 5);})
    .on('mouseout', function () {
         d3.select(this).transition()
-             .duration('200')
+             .duration(200)
              .attr("r", 3);})
     .append("title").text(function(item){return item.name});
 
