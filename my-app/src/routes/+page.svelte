@@ -32,9 +32,9 @@ CarFilter.CarTrackSelect(Cars,selected),POIs)
 </script>
 
 <h1>Kendall Brown - KU Leuven - r0773111</h1>
-<p>
+<h2>
   Overview
-</p>
+</h2>
 <p>
 	Select Car to Highlight
 	<select bind:value={selected}>
