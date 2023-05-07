@@ -20,8 +20,8 @@ const SP = (NS,S,P)=>{
 
     var yscale=d3.scaleLinear().domain([36.09,36.045]).range([0,width-spacing]);
     var xscale=d3.scaleLinear().domain([24.91,24.824]).range([height-spacing,0]);
-    var color=d3.scaleOrdinal().domain(["professional","housing","catering","other"])
-    .range(["blue","brown","green","yellow"])
+    var color=d3.scaleOrdinal().domain(["professional","housing","catering","domestic","other"])
+    .range(["blue","brown","green","cyan","yellow"])
 
     // var xAxis=d3.axisBottom(xscale);
     // var yAxis=d3.axisLeft(yscale);
