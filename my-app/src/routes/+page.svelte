@@ -18,6 +18,7 @@ import _ from 'lodash';
 // $:console.log(CarFilter.CarTrackSelect(Cars,selected))
 // $:console.log(CarFilter.CarTrackNonSelect(Cars,selected))
 
+console.log(POIs)
 
 // import SPCNS from "./SPCNS";
 // $:SPCNS(CarFilter.CarTrackNonSelect(Cars,selected));
@@ -26,7 +27,7 @@ import _ from 'lodash';
 // $:SPCS(CarFilter.CarTrackSelect(Cars,selected));
 import SP from "./SP";
 $:SP(CarFilter.CarTrackNonSelect(Cars,selected),
-CarFilter.CarTrackSelect(Cars,selected))
+CarFilter.CarTrackSelect(Cars,selected),POIs)
 
 
 
