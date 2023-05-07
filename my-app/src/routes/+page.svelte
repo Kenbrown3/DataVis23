@@ -1,12 +1,10 @@
 <script>
+import * as d3 from "d3";
 
-	// $: console.log('Changed selected:', selected)
-	// $: console.log('Updated options:', options)
+import CarFilter from "./CarFilter";
+export let data;
 
-  import CarFilter from "./CarFilter";
-  export let data;
-  const { Cars, POIs, Stop } = data;
-
+const { Cars, POIs, Stop } = data;
 const all=["All"];
 
 import _ from 'lodash';
@@ -16,10 +14,19 @@ import _ from 'lodash';
  let selected = "All";
 	    let options=all.concat(uniqueIDs);
 
+// $:console.log(selected)
+// $:console.log(CarFilter.CarTrackSelect(Cars,selected))
+// $:console.log(CarFilter.CarTrackNonSelect(Cars,selected))
 
-$:console.log(CarFilter.CarTrackSelect(Cars,selected))
-$:console.log(selected)
-$:console.log(CarFilter.CarTrackNonSelect(Cars,selected))
+
+// import SPCNS from "./SPCNS";
+// $:SPCNS(CarFilter.CarTrackNonSelect(Cars,selected));
+
+// import SPCS from "./SPCS";
+// $:SPCS(CarFilter.CarTrackSelect(Cars,selected));
+import SP from "./SP";
+$:SP(CarFilter.CarTrackNonSelect(Cars,selected),
+CarFilter.CarTrackSelect(Cars,selected))
 
 
 
@@ -35,9 +42,3 @@ $:console.log(CarFilter.CarTrackNonSelect(Cars,selected))
 		{#each options as value}<option {value}>{value}</option>{/each}
 	</select>
 </p>
-
-<!-- dropdown
-(details -> selectedcars stopgrid)
-unselected cars
-selected cars
-pois -->
