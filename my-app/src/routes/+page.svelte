@@ -18,8 +18,6 @@ import _ from 'lodash';
 // $:console.log(CarFilter.CarTrackSelect(Cars,selected))
 // $:console.log(CarFilter.CarTrackNonSelect(Cars,selected))
 
-console.log(POIs)
-
 // import SPCNS from "./SPCNS";
 // $:SPCNS(CarFilter.CarTrackNonSelect(Cars,selected));
 
