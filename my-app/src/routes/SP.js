@@ -1,17 +1,16 @@
 import * as d3 from "d3";
 import { append } from "svelte/internal";
 
-
 const SP = (NS,S,P)=>{
-
-    d3.select("svg").remove();
+    
     var width=600, height=600, spacing=100;
-
     var NSdata = NS;
     var Sdata = S;
-    var POIdata=P;
-    
-    var svg =d3.select("body")
+    var POIdata = P;
+
+    d3.select("svg").remove
+
+    var svg = d3.select("body")
     .append("svg")
     .attr("width",width)
     .attr("height",height)
@@ -29,9 +28,9 @@ const SP = (NS,S,P)=>{
     // svg.append("g").attr("transform","translate(0,"+(height-spacing)+")").call(xAxis);
     // svg.append("g").call(yAxis);
 
-    var NSdots=svg.append("g").attr("class","NS").selectAll("dot").data(NS);
-    var Sdots=svg.append("g").attr("class","S").selectAll("dot").data(S);
-    var POIdots=svg.append("g").attr("class","P").selectAll("dot").data(P);
+    var NSdots=svg.append("g").attr("class","NS").selectAll("dot").data(NSdata);
+    var Sdots=svg.append("g").attr("class","S").selectAll("dot").data(Sdata);
+    var POIdots=svg.append("g").attr("class","P").selectAll("dot").data(POIdata);
 
 
 
@@ -66,9 +65,7 @@ const SP = (NS,S,P)=>{
              .duration(200)
              .attr("r", 3);})
     .append("title").text(function(item){return item.name});
-
 };
-
 
 export default SP;
 

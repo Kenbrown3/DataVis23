@@ -18,18 +18,15 @@ import _ from 'lodash';
 // $:console.log(CarFilter.CarTrackSelect(Cars,selected))
 // $:console.log(CarFilter.CarTrackNonSelect(Cars,selected))
 
-// import SPCNS from "./SPCNS";
-// $:SPCNS(CarFilter.CarTrackNonSelect(Cars,selected));
 
-// import SPCS from "./SPCS";
-// $:SPCS(CarFilter.CarTrackSelect(Cars,selected));
 import SP from "./SP";
-$:SP(CarFilter.CarTrackNonSelect(Cars,selected),
-CarFilter.CarTrackSelect(Cars,selected),POIs)
-
-
+$:setTimeout(() => {
+	SP(CarFilter.CarTrackNonSelect(Cars,selected),
+	CarFilter.CarTrackSelect(Cars,selected),POIs)
+}, 1000);
 
 </script>
+
 
 <h1>Kendall Brown - KU Leuven - r0773111</h1>
 <h2>
